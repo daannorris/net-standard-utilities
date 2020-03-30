@@ -59,7 +59,7 @@ namespace Utils
 
                     foreach (byte b in data)
                     {
-                        builder.Append(chars[b % (chars.Count)]);
+                        builder.Append(chars[b % chars.Count]);
                     }
 
                     return builder.ToString();
