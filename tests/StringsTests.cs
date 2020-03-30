@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Utils;
+using Utilities;
 
-namespace UtilsTests
+namespace Utilities.Tests
 {
     /// <summary>
     /// Strings Utilities Tests

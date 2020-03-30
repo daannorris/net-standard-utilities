@@ -1,9 +1,9 @@
 using System;
 using System.Security.Cryptography;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Utils;
+using Utilities;
 
-namespace UtilsTests
+namespace Utilities.Tests
 {
     /// <summary>
     /// Cryptography Tests
