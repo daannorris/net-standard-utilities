@@ -46,7 +46,7 @@ namespace Utilities.Tests
         [TestMethod]
         public void GenerateRandomOnlyUppercaseTest()
         {
-            var regex = new Regex($"^[{_uppercase}]{12}");
+            var regex = new Regex($"^[{_uppercase}]{{12}}");
             var data = Strings.GenerateRandom(12, true, false, false, false);
             Assert.IsTrue(regex.IsMatch(data));
         }
@@ -57,7 +57,7 @@ namespace Utilities.Tests
         [TestMethod]
         public void GenerateRandomOnlyLowercaseTest()
         {
-            var regex = new Regex($"^[{_lowercase}]{12}");
+            var regex = new Regex($"^[{_lowercase}]{{12}}");
             var data = Strings.GenerateRandom(12, false, true, false, false);
             Assert.IsTrue(regex.IsMatch(data));
         }
@@ -68,7 +68,7 @@ namespace Utilities.Tests
         [TestMethod]
         public void GenerateRandomOnlyNumbersTest()
         {
-            var regex = new Regex($"^[{_numbers}]{12}");
+            var regex = new Regex($"^[{_numbers}]{{12}}");
             var data = Strings.GenerateRandom(12, false, false, true, false);
             Assert.IsTrue(regex.IsMatch(data));
         }
@@ -79,7 +79,7 @@ namespace Utilities.Tests
         [TestMethod]
         public void GenerateRandomOnlyUppercaseAndNumbersTest()
         {
-            var regex = new Regex($"^[{_uppercase}{_numbers}]{12}");
+            var regex = new Regex($"^[{_uppercase}{_numbers}]{{12}}");
             var data = Strings.GenerateRandom(12, true, false, true, false);
             Assert.IsTrue(regex.IsMatch(data));
         }
@@ -90,7 +90,7 @@ namespace Utilities.Tests
         [TestMethod]
         public void GenerateRandomOnlyLowercaseAndNumbersTest()
         {
-            var regex = new Regex($"^[{_lowercase}{_numbers}]{12}");
+            var regex = new Regex($"^[{_lowercase}{_numbers}]{{12}}");
             var data = Strings.GenerateRandom(12, false, true, true, false);
             Assert.IsTrue(regex.IsMatch(data));
         }
@@ -101,7 +101,7 @@ namespace Utilities.Tests
         [TestMethod]
         public void GenerateRandomOnlyUppercaseAndLowercaseTest()
         {
-            var regex = new Regex($"^[{_uppercase}{_lowercase}]{12}");
+            var regex = new Regex($"^[{_uppercase}{_lowercase}]{{12}}");
             var data = Strings.GenerateRandom(12, true, true, false, false);
             Assert.IsTrue(regex.IsMatch(data));
         }
@@ -112,7 +112,7 @@ namespace Utilities.Tests
         [TestMethod]
         public void GenerateRandomOnlyUppercaseAndLowercaseAndNumbersTest()
         {
-            var regex = new Regex($"^[{_uppercase}{_lowercase}{_numbers}]{12}");
+            var regex = new Regex($"^[{_uppercase}{_lowercase}{_numbers}]{{12}}");
             var data = Strings.GenerateRandom(12, true, true, true, false);
             Assert.IsTrue(regex.IsMatch(data));
         }
