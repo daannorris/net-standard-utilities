@@ -1,0 +1,33 @@
+# .NET Core Build definition
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+
+- task: DotNetCoreCLI@2
+  displayName: Build
+  inputs:
+    command: 'build'
+    arguments: '--configuration $(BuildConfiguration)'
+
+- task: DotNetCoreCLI@2
+  displayName: Test
+  inputs:
+    command: 'test'
+    arguments: >
+      --configuration $(BuildConfiguration)
+      /p:CollectCoverage=true
+      /p:CoverletOutput=$(Common.TestResultsDirectory)/
+      /p:CoverletOutputFormat=cobertura
+
+- task: PublishCodeCoverageResults@1
+  inputs:
+    codeCoverageTool: 'Cobertura'
+    summaryFileLocation: '$(Common.TestResultsDirectory)/coverage.cobertura.xml'
